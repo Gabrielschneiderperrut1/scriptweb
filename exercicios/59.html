@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Exercícios JS</title>
+</head>
+
+<body>
+   <div class="fomr-group">
+       <label for="">Digite a quantidade de horas do professor 1</label>
+       <input type="number" id="a1" class="form-control">
+   </div>
+   <div class="fomr-group">
+        <label for="">Digite a quantidade de aulas do  professor 1</label>
+        <input type="number" id="v1" class="form-control">
+    </div>
+    <div class="fomr-group">
+        <label for="">Digite a quantidade de horas do professor 2</label>
+        <input type="number" id="a2" class="form-control">
+    </div>
+    <div class="fomr-group">
+         <label for="">Digite a quantidade de aulas do professor 2</label>
+         <input type="number" id="v2" class="form-control">
+     </div>
+ 
+
+   <button class="btn btn-primary" onclick="maiorSalario()">OK</button>
+
+    <span id="saida"></span>
+
+   <script>
+       function maiorSalario(){
+
+        var a1 = parseFloat(document.getElementById("a1").value);
+        var v1 = parseFloat(document.getElementById("v1").value);
+        var a2 = parseFloat(document.getElementById("a2").value);
+        var v2 = parseFloat(document.getElementById("v2").value);
+
+        var total1 = a1 * v1;
+        var total2 = a2 * v2;
+        var win = "";
+        var p1 = "professor 1";
+        var p2 = "professor 2";
+
+        console.log(v1);
+        console.log(v2);
+
+
+// Saída é uma vez só.
+        var saida = document.getElementById("saida");
+
+        if(total1 > total2){
+            win = total1; 
+        saida.innerHTML= "<p>O salário do " + p1 + " é: " + total1 + "</p>" +  "<p>Quem recebe mais é o " + p1 + " que recebe: " + win + "</p>" ; 
+       }else{
+        saida.innerHTML= "<p>O salário do " + p2 + " é: " + total2 + "</p>" +  "<p>Quem recebe mais é o " + p2 + " que recebe: " + total2 + "</p>" ;
+       }
+        }
+         
+
+   </script>
+</body>
+</html>

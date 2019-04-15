@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="angular.min.js"></script>
+    </head>
+    <body ng-app="parimpar" ng-controller="ctrlParImpar">
+        <div class="fomr-group">
+            <label for="">Digite o valor</label>
+            <input type="number" id="valor" ng-model="valor" class="form-control">
+         
+            <span id="saida" ng-if="!valor"> Controller: {{ saida() }} </span>
+            <span class="alert alert-success" ng-if="valor % 2 == 0 && valor != null"> ng-IF: PAR </span>
+            <span class="alert alert-danger" ng-if="valor % 2 != 0 && valor != null"> ng-IF: ÍMPAR</span>
+            <script>
+                var app = angular.module("parimpar", []);
+                app.controller("ctrlParImpar", function ($scope) {
+                    $scope.saida = function(){
+                        if($scope.valor % 2 == 0){
+                            return "Par";
+                            
+                        }else{
+                            return "Ímpar";
+                        }
+                    }
+                });
+            
+            </script>
+        </body>
+        </html>

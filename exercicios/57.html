@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Exercícios JS</title>
+</head>
+
+<body>
+   <div class="fomr-group">
+       <label for="">Digite o 1º valor</label>
+       <input type="number" id="v1" class="form-control">
+   </div>
+   <div class="fomr-group">
+        <label for="">Digite o 2º valor</label>
+        <input type="number" id="v2" class="form-control">
+    </div>
+    <div class="fomr-group">
+            <label for="">Digite o 3º valor</label>
+            <input type="number" id="v3" class="form-control">
+        </div>
+
+   <button class="btn btn-primary" onclick="maiorMenor()">OK</button>
+
+    <span id="saida"></span>
+
+   <script>
+       function maiorMenor(){
+
+        var v1 = parseFloat(document.getElementById("v1").value);
+        var v2 = parseFloat(document.getElementById("v2").value);
+        var v3 = parseFloat(document.getElementById("v3").value);
+        var maior = 0;
+        var menor = 0;
+        console.log(v1);
+        console.log(v2);
+        console.log(v3);
+
+// Saída é uma vez só.
+        var saida = document.getElementById("saida");
+
+        if(v1 > v2){
+             maior = v1;
+        }else{
+             maior = v2;
+        }
+        if(v3 > maior){
+            maior = v3;
+        }
+        if(v1 < v2){
+             menor = v1;
+        }else{
+             menor = v2;
+        }
+        if(v3 < menor){
+            menor = v3;
+        }
+        saida.innerHTML= "maior: " + maior + " menor: " + menor;
+       }
+   </script>
+</body>
+</html>

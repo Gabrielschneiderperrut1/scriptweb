@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Exercícios JS</title>
+</head>
+
+<body>
+   <div class="fomr-group">
+       <label for="">Digite um valor</label>
+       <input type="number" id="valor" class="form-control">
+       <br>
+       <input type="number" id="valor2" class="form-control">
+       <br>
+       <input type="number" id="valor3" class="form-control">
+       <br>
+       <input type="number" id="valor4" class="form-control">
+   </div>
+
+   <button class="btn btn-primary" onclick="parImpar()">OK</button>
+
+    <span id="saida"></span>
+
+   <script>
+       function parImpar(){
+        var v = parseFloat(document.getElementById("valor").value);
+        var v2 = parseFloat(document.getElementById("valor2").value);
+        var v3 = parseFloat(document.getElementById("valor3").value);
+        var v4 = parseFloat(document.getElementById("valor4").value);
+        var vtotal = parseFloat(v + v2 + v3 + v4);
+        var vtotal2 = parseFloat(vtotal / 4);
+
+        console.log(v);
+        var saida = document.getElementById("saida");
+
+        if(vtotal2 >= 5){
+            saida.innerHTML = "<p> Aprovado </p>" + vtotal2 ;
+        }else{
+            saida.innerHTML = "<p> Reprovado </p>" + "<p> Sua média é: " + vtotal2 + "</p>";
+        }
+       }
+   </script>
+</body>
+</html>

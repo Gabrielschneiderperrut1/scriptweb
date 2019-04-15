@@ -1,0 +1,37 @@
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Exercicios JS</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    	crossorigin="anonymous">
+	<script src="angular.min.js"></script>
+</head>
+
+<<body ng-app="parimpar" ng-controller="ctrlParImpar">
+	<div class="fomr-group">
+		<label for="">Digite o salário</label>
+		<input type="number" id="valor" ng-model="valor" class="form-control">
+		<label for="">Digite o financiamento</label>
+		<input type="number" id="valor2" ng-model="valor2" class="form-control">
+	 
+		<span id="saida" ng-if="!valor"> Controller: {{ saida() }} </span>
+		<span class="alert alert-success" ng-if="valor * 5 >= valor2"> ng-IF: Financiamento Aprovado </span>
+		<span class="alert alert-danger" ng-if="valor * 5 < valor2"> ng-IF: Financiamento Negado</span>
+		<script>
+			var app = angular.module("parimpar", []);
+			app.controller("ctrlParImpar", function ($scope) {
+				$scope.saida = function(){
+					if($scope.valor * 5 >= valor2){
+						return "Fianciamento Aprovado. Obrigado por nos consultar";
+						
+					}else{
+						return "Financiamento Negado. Obrigado por nos consultar";
+					}
+				}
+			});
+		
+		</script>
+</body>

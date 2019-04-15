@@ -1,0 +1,66 @@
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Exercicios JS</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    	crossorigin="anonymous">
+	<script src="angular.min.js"></script>
+</head>
+
+<body ng-app="parimpar" ng-controller="ctrlParImpar">
+    <h3>76) Construa um algoritmo, em javascript, que leia 10 valores inteiros
+            e positivos e:
+            · Encontre o maior valor
+            · Encontre o menor valor
+            · Calcule a média dos números lidos</h3>
+	<div class="fomr-group">
+		<label for="">Digite o 1º valor</label>
+        <input type="number" id="valor" ng-model="n1" class="form-control">
+        <label for="">Digite o 2º valor</label>
+        <input type="number" id="valor2" ng-model="n2" class="form-control">
+        <label for="">Digite o 3º valor</label>
+		<input type="number" id="valor3" ng-model="n3" class="form-control">
+        <label for="">Digite o 4º valor</label>
+        <input type="number" id="valor4" ng-model="n4" class="form-control">
+        <label for="">Digite o 5º valor</label>
+        <input type="number" id="valor5" ng-model="n5" class="form-control">
+        <label for="">Digite o 6º valor</label>
+        <input type="number" id="valor6" ng-model="n6" class="form-control">
+        <label for="">Digite o 7º valor</label>
+        <input type="number" id="valor7" ng-model="n7" class="form-control">
+        <label for="">Digite o 8º valor</label>
+        <input type="number" id="valor8" ng-model="n8" class="form-control">
+        <label for="">Digite o 9º valor</label>
+        <input type="number" id="valor9" ng-model="n9" class="form-control">
+        <label for="">Digite o 10º valor</label>
+		<input type="number" id="valor10" ng-model="n10" class="form-control">
+	 
+		<span id="saida" ng-if="!valor"> Controller: {{ saida() }} </span>
+        <span class="alert alert-success" ng-if="$scope.maior ="> ng-IF: </span>
+        <!-- <span class="alert alert-success" ng-if="valor >= 0.3 && valor < 0.4"> ng-IF: Empresas do 1º e 2 grupo devem encerrar suas atividades </span> -->
+        <!-- <span class="alert alert-success" ng-if="valor >= 0.4"> ng-IF: Todas as Empresas  devem encerrar suas atividades </span> -->
+        
+		<script>
+			var app = angular.module("parimpar", []);
+			app.controller("ctrlParImpar", function ($scope) {
+                $scope.maior = 0;
+                $scope.menor = 0;
+				$scope.saida = function(){
+					if(n1 > 0) {
+						$scope.maior = n1;
+						
+					}
+                    if(($scope.valor > 0.3) || ($scope.valor == 0.4)){
+						return "Empresas do 1º e 2º grupo devem encerrar suas atividades ";
+						
+					}
+						return "Todos os grupos devem encerrar suas atividades";
+					}
+				}
+			);
+		
+		</script>
+</body>
